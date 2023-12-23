@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="90dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_buy_now"
+        android:backgroundTint="@color/white"
+        android:elevation="3dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/mini_product_image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="18dp"
+            android:background="@drawable/discount_bg"
+            android:backgroundTint="@color/green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/discount_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="30% OFF"
+                android:textColor="@color/white"
+                android:textSize="8dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/mini_product_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/neto_serif"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:layout_marginStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout3" />
+
+    <TextView
+        android:id="@+id/mini_product_price12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹"
+        android:textStyle="italic"
+        android:fontFamily="@font/libre_baskerville"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/mini_product_title"
+        app:layout_constraintTop_toBottomOf="@+id/mini_product_title" />
+
+    <TextView
+        android:id="@+id/mini_product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:fontFamily="@font/libre_baskerville"
+        app:layout_constraintBottom_toBottomOf="@+id/mini_product_price12"
+        app:layout_constraintStart_toEndOf="@+id/mini_product_price12"
+        app:layout_constraintTop_toTopOf="@+id/mini_product_price12" />
+
+    <TextView
+        android:id="@+id/mini_product_cutted_price12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:fontFamily="@font/libre_baskerville"
+        android:textColor="@color/black"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mini_product_price"
+        app:layout_constraintStart_toEndOf="@+id/mini_product_price" />
+
+    <TextView
+        android:id="@+id/mini_product_cutted_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:fontFamily="@font/libre_baskerville"
+        app:layout_constraintBottom_toBottomOf="@+id/mini_product_cutted_price12"
+        app:layout_constraintStart_toEndOf="@+id/mini_product_cutted_price12"
+        app:layout_constraintTop_toTopOf="@+id/mini_product_cutted_price12" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/mini_product_cutted_price"
+        app:layout_constraintEnd_toEndOf="@+id/mini_product_cutted_price"
+        app:layout_constraintStart_toStartOf="@+id/mini_product_cutted_price12"
+        app:layout_constraintTop_toTopOf="@+id/mini_product_cutted_price" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="388dp"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/productId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="productId"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/avl_qty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/qty_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/qty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/libre_baskerville"
+        app:layout_constraintStart_toStartOf="@+id/mini_product_price12"
+        app:layout_constraintTop_toBottomOf="@+id/mini_product_price" />
+
+    <TextView
+        android:id="@+id/yourPriceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Price ₹"
+        android:textStyle="italic"
+        android:fontFamily="@font/libre_baskerville"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/qty_text"
+        app:layout_constraintTop_toBottomOf="@+id/qty_text" />
+
+    <TextView
+        android:id="@+id/yourPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/libre_baskerville"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/yourPriceText"
+        app:layout_constraintStart_toEndOf="@+id/yourPriceText"
+        app:layout_constraintTop_toTopOf="@+id/yourPriceText" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store Location"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/shop_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Addresss - rgij ergiohn rhihiorh"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/shop_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+91 7064230183"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#005DD8"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Location"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Debwasihs sahoo"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/user_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Addresss - rgij ergiohn rhihiorh"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/user_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+91 7064230183"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#005DD8"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/canceledBtn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/create_store_ed_bg"
+                android:backgroundTint="@color/white"
+                android:text="Cancel Oder"
+                android:textColor="@color/red" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/deliveryBtn"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/login_ed_bg"
+                android:backgroundTint="@color/primary"
+                android:text="Delivered"
+                android:textColor="@color/primary" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/userUid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/qty_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/neto_serif"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/qty_text"
+        app:layout_constraintStart_toEndOf="@+id/qty_text"
+        app:layout_constraintTop_toTopOf="@+id/qty_text" />
+
+    <TextView
+        android:id="@+id/storeId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

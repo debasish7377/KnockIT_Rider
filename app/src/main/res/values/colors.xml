@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#048ED6</color>
+    <color name="primaryBtn">#003159</color>
+    <color name="colorHint">#82D3FD</color>
+    <color name="green">#42AA1D</color>
+    <color name="red">#CA0707</color>
+    <color name="gray">#939393</color>
+
+    <color name="rattingColor">#DC7700</color>
+    <color name="excellentColor">#06A759</color>
+    <color name="goodColor">#F4B743</color>
+    <color name="averageColor">#EC803D</color>
+    <color name="poorColor">#F52833</color>
+    <color name="searchBgColor">#E4E6ED</color>
+    <color name="clickedBg">#D6D6D6</color>
+</resources>
