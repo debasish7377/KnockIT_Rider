@@ -199,7 +199,6 @@ class HomeFragment : Fragment() {
         }
 
         binding.storeConnection.cancelBtn.setOnClickListener {
-            MyServices.ringtone.stop()
             loadingDialog.show()
             FirebaseFirestore.getInstance()
                 .collection("RiderNotification")

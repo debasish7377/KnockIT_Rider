@@ -7,28 +7,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:912188914950:android:82782e27e6980f80e6b287",
+        "mobilesdk_app_id": "1:912188914950:android:75ac045125d4b6ece6b287",
         "android_client_info": {
-          "package_name": "com.example.knockit"
+          "package_name": "com.example.knockitUser"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "912188914950-5a0duleiq8ms62ls39qgrg8rdpv8deqi.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.knockit",
-            "certificate_hash": "5319761bbefd216f6d670d81f170a3bd6a4e945a"
-          }
-        },
-        {
-          "client_id": "912188914950-9fvkchaq88d2skhb286i0dt3i0jfavc3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.knockit",
-            "certificate_hash": "e58655ac53f07b7b4dc34a3e2d1dc3bd60c79d61"
-          }
-        },
         {
           "client_id": "912188914950-890v45d16jcpj68ct4d4bf72pob12ets.apps.googleusercontent.com",
           "client_type": 3
@@ -36,7 +20,36 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDYi7AQIrv5UuSwzaYoSoodXzM6AMm2IJU"
+          "current_key": "AIzaSyAb7FI4iaLsgVW2XQ_pW8VZitJX5eeqQNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912188914950-890v45d16jcpj68ct4d4bf72pob12ets.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912188914950:android:8749e474cf2eccbee6b287",
+        "android_client_info": {
+          "package_name": "com.example.knockitadminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912188914950-890v45d16jcpj68ct4d4bf72pob12ets.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb7FI4iaLsgVW2XQ_pW8VZitJX5eeqQNc"
         }
       ],
       "services": {
@@ -73,7 +86,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDYi7AQIrv5UuSwzaYoSoodXzM6AMm2IJU"
+          "current_key": "AIzaSyAb7FI4iaLsgVW2XQ_pW8VZitJX5eeqQNc"
         }
       ],
       "services": {
@@ -102,7 +115,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDYi7AQIrv5UuSwzaYoSoodXzM6AMm2IJU"
+          "current_key": "AIzaSyAb7FI4iaLsgVW2XQ_pW8VZitJX5eeqQNc"
         }
       ],
       "services": {

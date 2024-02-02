@@ -194,7 +194,6 @@ internal class MyServices : Service() {
     }
 
     override fun onDestroy() {
-        ringtone!!.stop()
         t.cancel()
         super.onDestroy()
     }

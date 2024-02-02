@@ -45,16 +45,16 @@ class SplashscreenActivity : AppCompatActivity() {
 
 // Start the animation like this
         binding.imageView3.startAnimation(zoom)
-        Intent(applicationContext, RunningApp::class.java).also {
-            it.action = MyServices.Actions.START.toString()
-            startForegroundService(it)
-        }
+//        Intent(applicationContext, RunningApp::class.java).also {
+//            it.action = MyServices.Actions.START.toString()
+//            startForegroundService(it)
+//        }
 
         firebaseAuth = FirebaseAuth.getInstance()
         val time: Thread = object : Thread() {
             override fun run() {
                 try {
-                    sleep(1000)
+                    sleep(2000)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 } finally {
@@ -97,10 +97,10 @@ class SplashscreenActivity : AppCompatActivity() {
         }
         time.start()
 
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val channel = NotificationChannel("CHANNEL_ID", "My Foreground Service", NotificationManager.IMPORTANCE_HIGH)
-        notificationManager.createNotificationChannel(channel)
-
+//        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+//        val channel = NotificationChannel("CHANNEL_ID", "My Foreground Service", NotificationManager.IMPORTANCE_HIGH)
+//        notificationManager.createNotificationChannel(channel)
+//
 //        var intent = Intent(this, MyServices::class.java)
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 //            applicationContext.startForegroundService(intent)

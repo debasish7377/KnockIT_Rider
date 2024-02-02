@@ -6,12 +6,14 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -43,6 +45,14 @@ class MainActivity : AppCompatActivity() {
         val view: View = binding.getRoot()
         setContentView(view)
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
+                0
+            )
+        }
+
         ////////////////loading dialog
         loadingDialog = Dialog(this)
         loadingDialog.setContentView(R.layout.dialog_loading)
@@ -59,20 +69,23 @@ class MainActivity : AppCompatActivity() {
                 if (updateDrivingLicenceImage_2) {
                     if (!binding.createAccount.drivingLicence.text.isEmpty()) {
                         if (!binding.createAccount.accountNumber.text.toString().isEmpty()) {
-                            if (!binding.createAccount.accountHolderName.text.toString().isEmpty()) {
+                            if (!binding.createAccount.accountHolderName.text.toString()
+                                    .isEmpty()
+                            ) {
                                 if (!binding.createAccount.bankName.text.toString().isEmpty()) {
                                     if (!binding.createAccount.ifscCode.text.toString()
                                             .isEmpty()
                                     ) {
 
-                                            loadingDialog.show()
-                                            var reference: StorageReference =
-                                                FirebaseStorage.getInstance().getReference()
-                                                    .child("profiles").child(
-                                                        FirebaseAuth.getInstance().getUid()
-                                                            .toString()
-                                                    );
-                                            reference.putFile(drivingLicenceImage_1).addOnCompleteListener {
+                                        loadingDialog.show()
+                                        var reference: StorageReference =
+                                            FirebaseStorage.getInstance().getReference()
+                                                .child("profiles").child(
+                                                    FirebaseAuth.getInstance().getUid()
+                                                        .toString()
+                                                );
+                                        reference.putFile(drivingLicenceImage_1)
+                                            .addOnCompleteListener {
                                                 reference.downloadUrl.addOnSuccessListener { profileImage ->
 
                                                     var uploadStoreImage: StorageReference =
@@ -86,16 +99,12 @@ class MainActivity : AppCompatActivity() {
                                                         .addOnCompleteListener {
                                                             uploadStoreImage.downloadUrl.addOnSuccessListener { storeImage ->
 
-                                                                val userData: MutableMap<String, Any?> =
-                                                                    HashMap()
-                                                                userData["drivingLicence"] =
-                                                                    binding.createAccount.drivingLicence.text.toString()
+                                                                val userData: MutableMap<String, Any?> = HashMap()
+                                                                userData["drivingLicence"] = binding.createAccount.drivingLicence.text.toString()
                                                                 userData["drivingLicenceImage_1"] = profileImage
                                                                 userData["drivingLicenceImage_2"] = storeImage
-                                                                userData["bankAccountNumber"] =
-                                                                    binding.createAccount.accountNumber.text.toString()
-                                                                userData["bankName"] =
-                                                                    binding.createAccount.bankName.text.toString()
+                                                                userData["bankAccountNumber"] = binding.createAccount.accountNumber.text.toString()
+                                                                userData["bankName"] = binding.createAccount.bankName.text.toString()
                                                                 userData["bankHolderName"] = binding.createAccount.accountHolderName.text.toString()
                                                                 userData["bankIFSCCode"] = binding.createAccount.ifscCode.text.toString()
 
@@ -138,7 +147,8 @@ class MainActivity : AppCompatActivity() {
                                     binding.createAccount.OkBtn.visibility = View.VISIBLE
                                 }
                             } else {
-                                binding.createAccount.accountHolderName.error = "Enter Store Description"
+                                binding.createAccount.accountHolderName.error =
+                                    "Enter Store Description"
                                 binding.createAccount.accountHolderName.setText("")
                                 binding.createAccount.OkBtn.visibility = View.VISIBLE
                             }
@@ -164,51 +174,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.drivingLicenceImage1.setOnClickListener {
-            Dexter.withContext(this@MainActivity)
-                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                .withListener(object : PermissionListener {
-                    override fun onPermissionGranted(permissionGrantedResponse: PermissionGrantedResponse) {
-                        val intent = Intent(Intent.ACTION_PICK)
-                        intent.type = "image/*"
-                        startActivityForResult(
-                            Intent.createChooser(intent, "Select Picture"),
-                            1
-                        )
-                    }
-
-                    override fun onPermissionDenied(permissionDeniedResponse: PermissionDeniedResponse) {}
-                    override fun onPermissionRationaleShouldBeShown(
-                        permissionRequest: PermissionRequest?,
-                        permissionToken: PermissionToken
-                    ) {
-                        permissionToken.continuePermissionRequest()
-                    }
-                })
-                .check()
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(
+                Intent.createChooser(intent, "Select Picture"),
+                1
+            )
         }
 
         binding.drivingLicenceImage2.setOnClickListener {
-            Dexter.withContext(this@MainActivity)
-                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                .withListener(object : PermissionListener {
-                    override fun onPermissionGranted(permissionGrantedResponse: PermissionGrantedResponse) {
-                        val intent = Intent(Intent.ACTION_PICK)
-                        intent.type = "image/*"
-                        startActivityForResult(
-                            Intent.createChooser(intent, "Select Picture"),
-                            2
-                        )
-                    }
 
-                    override fun onPermissionDenied(permissionDeniedResponse: PermissionDeniedResponse) {}
-                    override fun onPermissionRationaleShouldBeShown(
-                        permissionRequest: PermissionRequest?,
-                        permissionToken: PermissionToken
-                    ) {
-                        permissionToken.continuePermissionRequest()
-                    }
-                })
-                .check()
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(
+                Intent.createChooser(intent, "Select Picture"),
+                2
+            )
         }
     }
 
